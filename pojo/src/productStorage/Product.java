@@ -33,17 +33,17 @@ public class Product {
     }
 
 
-    Product(){
+    public Product (){
         type = "";
         name = "";
         price = 0.0;
-        System.out.println(Продукт создан!);
+        System.out.println("Продукт создан!");
     }
 
-    Product(type, name, price){
+    public Product(type, name, price){
         this.type = type;
         this.name = name;
         this.price = price;
-        System.out.println(Продукт создан!);
+        System.out.println("Продукт создан!");
     }
 }
