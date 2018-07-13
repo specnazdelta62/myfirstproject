@@ -7,6 +7,12 @@ public class Product {
     private String name;
     private double price;
 
+    public Product(String type, String name, double price) {
+        this.type = type;
+        this.name = name;
+        this.price = price;
+    }
+
     public String getType() {
         return type;
     }
@@ -28,22 +34,14 @@ public class Product {
     }
 
     public void setPrice(double price) {
-        if (price > 0)
-            this.price = price;
-    }
-
-
-    Product(){
-        type = "";
-        name = "";
-        price = 0.0;
-        System.out.println(Продукт создан!);
-    }
-
-    Product(type, name, price){
-        this.type = type;
-        this.name = name;
         this.price = price;
-        System.out.println(Продукт создан!);
     }
+
+
+
+
+
+
+
+
 }
