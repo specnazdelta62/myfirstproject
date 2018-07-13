@@ -5,16 +5,19 @@ import java.util.ArrayList;
 public class ProductManager {
 
     static ArrayList<Product> productsList = new ArrayList<>();
-
+    Product product;
 
     public void add(Product product){
         productsList.add(product);
         System.out.println("Продукт " + product.getName() + " добавлен в список");
     }
 
-    public void remove(Product product){
-        productsList.remove(product);
-        System.out.println("Продукт " + product.getName() + " удален");
+    public void remove(String name){
+        for (int i = 0; i < productsList.size(); i++)
+            if (name.equals(product.getName())) {
+                productsList.remove(i);
+                break;
+            }
     }
 
     public ArrayList getAll(){
