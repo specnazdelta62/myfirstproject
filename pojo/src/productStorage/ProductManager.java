@@ -1,11 +1,16 @@
 package productStorage;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 public class ProductManager {
 
-    static ArrayList<Product> productsList = new ArrayList<>();
-    Product product;
+    private ArrayList<Product> productsList;
+
+    public ArrayList<Product> getProductsList() {
+        if (productsList == null) return new ArrayList<Product>();
+        return productsList;
+    }
 
     public void add(Product product){
         productsList.add(product);
@@ -13,11 +18,8 @@ public class ProductManager {
     }
 
     public void remove(String name){
-        for (int i = 0; i < productsList.size(); i++)
-            if (name.equals(product.getName())) {
-                productsList.remove(i);
-                break;
-            }
+        Predicate<Product> p = product -> product.getName().equals(name);
+        productsList.removeIf(p);
     }
 
     public ArrayList getAll(){
